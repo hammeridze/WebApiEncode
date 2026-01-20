@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="c56b3a37-e1d4-4cc0-adad-70495359baeb" name="Roman@DESKTOP-QR7S4TI 2026-01-20 18:44:13" runUser="DESKTOP-QR7S4TI\Roman" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-01-20T18:44:13.6367508+07:00" queuing="2026-01-20T18:44:13.6367511+07:00" start="2026-01-20T18:44:12.6200334+07:00" finish="2026-01-20T18:44:13.6430864+07:00" />
+  <TestSettings name="default" id="f2464b9d-2d0f-4491-a0a5-ca040d3ee7f8">
+    <Deployment runDeploymentRoot="Roman_DESKTOP-QR7S4TI_2026-01-20_18_44_13" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="a95133a7-5109-45c5-8005-b151b7879f45" testId="7f413089-0795-6e11-5ab9-a74971aa647a" testName="TestEncryptFalse" computerName="DESKTOP-QR7S4TI" duration="00:00:00.0002113" startTime="2026-01-20T18:44:13.4968322+07:00" endTime="2026-01-20T18:44:13.4972711+07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="a95133a7-5109-45c5-8005-b151b7879f45" />
+    <UnitTestResult executionId="ce01702e-26f8-4436-9f81-7d9af0f89131" testId="604fcb93-77f8-af0c-275e-75ddc78cff5b" testName="TestEncryptTrue" computerName="DESKTOP-QR7S4TI" duration="00:00:00.2298211" startTime="2026-01-20T18:44:13.2508481+07:00" endTime="2026-01-20T18:44:13.4926002+07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="ce01702e-26f8-4436-9f81-7d9af0f89131" />
+    <UnitTestResult executionId="e1ec3865-bce9-4f89-ae65-8193c16ff3e9" testId="4f10e79a-a351-3373-1173-9dd311c6a69f" testName="TestTokenFalse" computerName="DESKTOP-QR7S4TI" duration="00:00:00.0006489" startTime="2026-01-20T18:44:13.5011521+07:00" endTime="2026-01-20T18:44:13.5030126+07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="e1ec3865-bce9-4f89-ae65-8193c16ff3e9" />
+    <UnitTestResult executionId="1819fed1-18fa-43aa-af43-e1fb5c48eb6f" testId="c51a2c0a-27fd-3ed4-9551-a522f2e7f27e" testName="TestDecryptTrue" computerName="DESKTOP-QR7S4TI" duration="00:00:00.0005382" startTime="2026-01-20T18:44:13.4976146+07:00" endTime="2026-01-20T18:44:13.4982747+07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="1819fed1-18fa-43aa-af43-e1fb5c48eb6f" />
+    <UnitTestResult executionId="d479242c-211e-4c36-88e7-00d1d744bae0" testId="b79fbe10-8c57-ff97-e068-a0da6287c4c6" testName="TestDecryptFalse" computerName="DESKTOP-QR7S4TI" duration="00:00:00.0000766" startTime="2026-01-20T18:44:13.4983330+07:00" endTime="2026-01-20T18:44:13.4985177+07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="d479242c-211e-4c36-88e7-00d1d744bae0" />
+    <UnitTestResult executionId="fe615403-c142-4638-b6cc-81307421e097" testId="ab429d6d-8860-7431-d526-a11daf0b3d80" testName="TestTokenTrue" computerName="DESKTOP-QR7S4TI" duration="00:00:00.0023788" startTime="2026-01-20T18:44:13.4985662+07:00" endTime="2026-01-20T18:44:13.5010701+07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="fe615403-c142-4638-b6cc-81307421e097" />
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="TestTokenFalse" storage="c:\users\roman\desktop\webapiencode\unittests\bin\debug\net8.0\unittests.dll" id="4f10e79a-a351-3373-1173-9dd311c6a69f">
+      <Execution id="e1ec3865-bce9-4f89-ae65-8193c16ff3e9" />
+      <TestMethod codeBase="C:\Users\Roman\Desktop\WebApiEncode\UnitTests\bin\Debug\net8.0\UnitTests.dll" adapterTypeName="executor://mstestadapter/v2" className="UnitTests.UnitTest1" name="TestTokenFalse" />
+    </UnitTest>
+    <UnitTest name="TestDecryptFalse" storage="c:\users\roman\desktop\webapiencode\unittests\bin\debug\net8.0\unittests.dll" id="b79fbe10-8c57-ff97-e068-a0da6287c4c6">
+      <Execution id="d479242c-211e-4c36-88e7-00d1d744bae0" />
+      <TestMethod codeBase="C:\Users\Roman\Desktop\WebApiEncode\UnitTests\bin\Debug\net8.0\UnitTests.dll" adapterTypeName="executor://mstestadapter/v2" className="UnitTests.UnitTest1" name="TestDecryptFalse" />
+    </UnitTest>
+    <UnitTest name="TestEncryptTrue" storage="c:\users\roman\desktop\webapiencode\unittests\bin\debug\net8.0\unittests.dll" id="604fcb93-77f8-af0c-275e-75ddc78cff5b">
+      <Execution id="ce01702e-26f8-4436-9f81-7d9af0f89131" />
+      <TestMethod codeBase="C:\Users\Roman\Desktop\WebApiEncode\UnitTests\bin\Debug\net8.0\UnitTests.dll" adapterTypeName="executor://mstestadapter/v2" className="UnitTests.UnitTest1" name="TestEncryptTrue" />
+    </UnitTest>
+    <UnitTest name="TestEncryptFalse" storage="c:\users\roman\desktop\webapiencode\unittests\bin\debug\net8.0\unittests.dll" id="7f413089-0795-6e11-5ab9-a74971aa647a">
+      <Execution id="a95133a7-5109-45c5-8005-b151b7879f45" />
+      <TestMethod codeBase="C:\Users\Roman\Desktop\WebApiEncode\UnitTests\bin\Debug\net8.0\UnitTests.dll" adapterTypeName="executor://mstestadapter/v2" className="UnitTests.UnitTest1" name="TestEncryptFalse" />
+    </UnitTest>
+    <UnitTest name="TestTokenTrue" storage="c:\users\roman\desktop\webapiencode\unittests\bin\debug\net8.0\unittests.dll" id="ab429d6d-8860-7431-d526-a11daf0b3d80">
+      <Execution id="fe615403-c142-4638-b6cc-81307421e097" />
+      <TestMethod codeBase="C:\Users\Roman\Desktop\WebApiEncode\UnitTests\bin\Debug\net8.0\UnitTests.dll" adapterTypeName="executor://mstestadapter/v2" className="UnitTests.UnitTest1" name="TestTokenTrue" />
+    </UnitTest>
+    <UnitTest name="TestDecryptTrue" storage="c:\users\roman\desktop\webapiencode\unittests\bin\debug\net8.0\unittests.dll" id="c51a2c0a-27fd-3ed4-9551-a522f2e7f27e">
+      <Execution id="1819fed1-18fa-43aa-af43-e1fb5c48eb6f" />
+      <TestMethod codeBase="C:\Users\Roman\Desktop\WebApiEncode\UnitTests\bin\Debug\net8.0\UnitTests.dll" adapterTypeName="executor://mstestadapter/v2" className="UnitTests.UnitTest1" name="TestDecryptTrue" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="7f413089-0795-6e11-5ab9-a74971aa647a" executionId="a95133a7-5109-45c5-8005-b151b7879f45" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="604fcb93-77f8-af0c-275e-75ddc78cff5b" executionId="ce01702e-26f8-4436-9f81-7d9af0f89131" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="4f10e79a-a351-3373-1173-9dd311c6a69f" executionId="e1ec3865-bce9-4f89-ae65-8193c16ff3e9" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="c51a2c0a-27fd-3ed4-9551-a522f2e7f27e" executionId="1819fed1-18fa-43aa-af43-e1fb5c48eb6f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="b79fbe10-8c57-ff97-e068-a0da6287c4c6" executionId="d479242c-211e-4c36-88e7-00d1d744bae0" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="ab429d6d-8860-7431-d526-a11daf0b3d80" executionId="fe615403-c142-4638-b6cc-81307421e097" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Список результатов" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="Все загруженные результаты" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Completed">
+    <Counters total="6" executed="6" passed="6" failed="0" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+</TestRun>

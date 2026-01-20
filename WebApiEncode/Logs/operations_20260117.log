@@ -1,0 +1,8 @@
+﻿[2026-01-17 00:32:23] [alex@gmail.com] DELETE: Текст ID 5 удален
+[2026-01-17 00:49:34] [alex@gmail.com] DELETE: Текст ID 1 удален
+[2026-01-17 00:50:03] [alex@gmail.com] UPDATE: Текст ID 3 изменен
+[2026-01-17 01:10:52] [alex@gmail.com] ADD: Текст 'romchik' добавлен с ID 10
+[2026-01-17 01:11:24] [alex@gmail.com] ENCRYPT: Шифрование текста ID 10 длиной 7 символов
+[2026-01-17 01:11:45] [alex@gmail.com] DECRYPT: Расшифрование текста ID 10 длиной 7 символов
+[2026-01-17 01:12:03] [alex@gmail.com] DELETE: Текст ID 1 удален
+[2026-01-17 01:12:11] [alex@gmail.com] ADD: Текст 'fdfsfg' добавлен с ID 1
