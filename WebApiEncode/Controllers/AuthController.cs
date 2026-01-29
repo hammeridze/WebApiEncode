@@ -80,10 +80,10 @@ namespace WebApiEncode.Controllers
             else
             {
                 User user = new User
-                {
-                    Email = requestRegistration.Email,
-                    Password = requestRegistration.Password
-                };
+            {
+                Email = requestRegistration.Email,
+                Password = PasswordHasher.HashPassword(requestRegistration.Password)  // ← ХЕШИРОВАНИЕ
+            };
                 _context.Users.Add(user);
                 _context.SaveChanges();
 
@@ -98,54 +98,64 @@ namespace WebApiEncode.Controllers
         [HttpPost("autorization")]
         public ActionResult<ResponseRegistration> Autorization([FromBody] RequestRegistration request)
         {
-            if (request == null)
-            {
-                return BadRequest(new ResponseRegistration 
-                { 
-                    Success = false, 
-                    Note = "Запрос не может быть пустым" 
-                });
-            }
-
-            if (string.IsNullOrWhiteSpace(request.Email))
-            {
-                return BadRequest(new ResponseRegistration 
-                { 
-                    Success = false, 
-                    Note = "Email не может быть пустым" 
-                });
-            }
-
-            if (string.IsNullOrWhiteSpace(request.Password))
-            {
-                return BadRequest(new ResponseRegistration 
-                { 
-                    Success = false, 
-                    Note = "Пароль не может быть пустым" 
-                });
-            }
-
-            User? user = _context.Users.FirstOrDefault(t => t.Email == request.Email && t.Password == request.Password);
-            ResponseRegistration response = new ResponseRegistration();
-
-            if (user != null)
-            {
-                var token = _tokenService.GenerateToken(user);
-
-                response.Success = true;
-                response.Id = user.Id;
-                response.JwtToken = token;
-                response.User = user;
-                response.Expiration = DateTime.Now.AddMinutes(Convert.ToDouble(_configuration["JwtSettings:ExpiryMinutes"]));
-            }
-            else
-            {
-                response.Success = false;
-                response.Note = "Не найден пользователь с такими данными";
-            }
-
-            return Ok(response);
+        if (request == null)
+        {
+        return BadRequest(new ResponseRegistration 
+        { 
+            Success = false, 
+            Note = "Запрос не может быть пустым" 
+        });
         }
+
+        if (string.IsNullOrWhiteSpace(request.Email))
+        {
+            return BadRequest(new ResponseRegistration 
+        { 
+            Success = false, 
+            Note = "Email не может быть пустым" 
+        });
+        }
+
+        if (string.IsNullOrWhiteSpace(request.Password))
+        {
+            return BadRequest(new ResponseRegistration 
+        { 
+            Success = false, 
+            Note = "Пароль не может быть пустым" 
+        });
+        }
+
+        // Ищем пользователя только по email
+        User? user = _context.Users.FirstOrDefault(t => t.Email == request.Email);
+        ResponseRegistration response = new ResponseRegistration();
+
+        if (user != null)
+        {
+            // Проверяем пароль через хеширование
+            if (PasswordHasher.VerifyPassword(request.Password, user.Password))
+        {
+            var token = _tokenService.GenerateToken(user);
+
+            response.Success = true;
+            response.Id = user.Id;
+            response.JwtToken = token;
+            response.User = user;
+            response.Expiration = DateTime.Now.AddMinutes(Convert.ToDouble(_configuration["JwtSettings:ExpiryMinutes"]));
+        }
+        else
+        {
+            response.Success = false;
+            response.Note = "Неверный пароль";
+        }
+        }
+        else
+        {
+            response.Success = false;
+            response.Note = "Пользователь не найден";
+        }
+
+    return Ok(response);
+}
 
         [HttpPost("password")]
         public IActionResult Password([FromBody] ChangePasswordRequest request)
@@ -175,11 +185,11 @@ namespace WebApiEncode.Controllers
                 return BadRequest("Новый пароль должен содержать минимум 3 символа");
             }
 
-            User? user = _context.Users.FirstOrDefault(t => t.Email == request.Login && t.Password == request.OldPassword);
-            if (user == null)
+            User? user = _context.Users.FirstOrDefault(t => t.Email == request.Login);
+            if (user == null || !PasswordHasher.VerifyPassword(request.OldPassword, user.Password))
                 return BadRequest("Неверный логин или пароль");
 
-            user.Password = request.NewPassword;
+            user.Password = PasswordHasher.HashPassword(request.NewPassword);
             _context.SaveChanges();
 
             return Ok(new { message = "Пароль успешно изменен" });
